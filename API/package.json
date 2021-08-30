@@ -1,0 +1,19 @@
+{
+  "name": "appfullstack",
+  "version": "1.0.0",
+  "description": "backend en mongo y express",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "type": "module",
+  "author": "Lucia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
