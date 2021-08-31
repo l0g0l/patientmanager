@@ -1,8 +1,52 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
+import axiosClient from '../config/axios'    
 
 
-const newAppointment = () => {
+const NewAppointment = () => {
+
+    //generamos los states para cada uno de los campos del formulario
+    const [appointment, setAppointment] = useState({
+        name: '',
+        breed: '',
+        owner: '',
+        telephone: '',
+        email: '',
+        date: '',
+        time: '',
+        symptoms: ''
+    })
+
+
+    //leemos los datos del formulario
+    const updateState = e => {
+        //guardamos en el state ...appointment, esto es, lo que ya hubiera en el state, y le aádimos el target.name para saber a qué input donde el usuario está escribiendo y el target.value para recoger lo que escribe. Todo eso lo guardamos como un obj        
+        setAppointment({
+            ...appointment,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    //enviamos una petición a la API
+    const createNewAppointment = e => {
+        e.preventDefault() //detenemos el formulario
+
+        //enviamos la petición por Axios. Como segundo parámetro le tienes que poner lo que quieres agregar, por tanto el state appointment
+        axiosClient.post('/patients', appointment)
+             .then(res => {
+                 console.log(res);
+
+                 //redireccionamos
+                 
+             })
+
+
+
+    }
+
+
+
+
     return (
         <Fragment>
             <h1 className="my-5">Create New Appointment</h1>
@@ -14,7 +58,7 @@ const newAppointment = () => {
                     </div>
 
                     <div className="col-md-8 mx-auto">
-                        <form className="bg-white p-5 bordered">
+                        <form onSubmit ={createNewAppointment} className="bg-white p-5 bordered">
                             <div className="form-group">
                                 <label htmlFor="name">Pet Name</label>
                                 <input
@@ -23,6 +67,7 @@ const newAppointment = () => {
                                     id="name"
                                     name="name"
                                     placeholder="Pet Name"
+                                    onChange={updateState}
                                 />
                             </div>
                             <div className="form-group">
@@ -33,6 +78,7 @@ const newAppointment = () => {
                                     id="breed"
                                     name="breed"
                                     placeholder="Breed"
+                                    onChange={updateState}
                                 />
                             </div>
                             <div className="form-group">
@@ -43,6 +89,7 @@ const newAppointment = () => {
                                     id="owner"
                                     name="owner"
                                     placeholder="Pet Owner"
+                                    onChange={updateState}
                                 />
                             </div>
 
@@ -54,6 +101,7 @@ const newAppointment = () => {
                                     id="telephone"
                                     name="telephone"
                                     placeholder="Telephone Number"
+                                    onChange={updateState}
                                 />
                             </div>
 
@@ -65,6 +113,7 @@ const newAppointment = () => {
                                     id="email"
                                     name="email"
                                     placeholder="Email"
+                                    onChange={updateState}
                                 />
                             </div>
 
@@ -75,6 +124,7 @@ const newAppointment = () => {
                                     className="form-control form-control-lg"
                                     id="date"
                                     name="date"
+                                    onChange={updateState}
                                 />
                             </div>
 
@@ -85,6 +135,7 @@ const newAppointment = () => {
                                     className="form-control form-control-lg"
                                     id="time"
                                     name="time"
+                                    onChange={updateState}
                                 />
                             </div>
 
@@ -94,6 +145,7 @@ const newAppointment = () => {
                                     className="form-control"
                                     name="symptoms"
                                     rows="6"
+                                    onChange={updateState}
                                 ></textarea>
                             </div>
 
@@ -115,4 +167,4 @@ const newAppointment = () => {
     );
 }
 
-export default newAppointment;
+export default NewAppointment;

@@ -40,6 +40,7 @@ const host = process.env.HOST || '0.0.0.0'
 
 
 //Agregar body-parser para leer los datos del formulario
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
 

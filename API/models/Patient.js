@@ -3,23 +3,35 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const patientsSchema = new Schema({
-    nombre: {
+    name: {
         type: String,
         trim: true
     },
-    propietario: {
+    breed: {
         type: String,
         trim: true
     },
-    fecha: {
+    owner: {
         type: String,
         trim: true
     },
-    hora:{
+    telephone: {
+        type: Number,
+        trim: true
+    },
+    email: {
         type: String,
         trim: true
     },
-    sintomas:{
+    date: {
+        type: String,
+        trim: true
+    },
+    time:{
+        type: String,
+        trim: true
+    },
+    symptoms:{
         type: String,
         trim: true
     }

@@ -22,17 +22,17 @@ const Patients = ({ data }) => {
                                 <a key={item._id} href="" className="p-5 list-group-item list-group-item-action flex-column align-items-start">
 
                                     <div className="d-flex w-100 justify-content-between mb-4">
-                                        <h3 className="mb-3">{item.nombre} - {item.raza}</h3>
+                                        <h3 className="mb-3">{item.name} - {item.breed}</h3>
                                         <small className="fecha-alta">
-                                            {item.fecha} - {item.hora}
+                                            {item.date} - {item.time}
                                         </small>
                                     </div>
 
-                                    <p className="mb-0">{item.sintomas}</p>
+                                    <p className="mb-0">{item.symptoms}</p>
 
                                     <div className="contacto py-3">
-                                        <p>Owner: {item.propietario}</p>
-                                        <p>Telephone number: {item.telefono}</p>
+                                        <p>Owner: {item.owner}</p>
+                                        <p>Telephone number: {item.telephone}</p>
                                         <p>Email: {item.email}</p>
                                     </div>
 
