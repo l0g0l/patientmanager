@@ -155,13 +155,7 @@ const NewAppointment = (props) => {
                 </div>
             </div>
 
-
-
         </Fragment>
-
-
-
-
     );
 }
 

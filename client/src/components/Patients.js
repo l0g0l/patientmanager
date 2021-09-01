@@ -9,7 +9,7 @@ const Patients = ({ data }) => {
 
     return (
         <Fragment>
-            <h1 className="my-5">Patient Appointment Generator</h1>
+            <h1 className="my-5">veterinary patient appointment manager</h1>
             <div className="container mt-5 py-5">
                 <div className="row">
                     <div className="col-12 mb-5 d-flex justify-content-center">
