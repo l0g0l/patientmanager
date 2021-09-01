@@ -20,9 +20,7 @@ h1 {
     color: white;
     font-size: 4rem;
 }
-h2 {
 
-}
 h3 {
     font-family: 'Staatliches', cursive;
     color:#AA076B;
@@ -46,4 +44,9 @@ h3 {
 }
 form {
     border-radius: .3rem;
+}
+.delete {
+    border: none;
+    outline: none !important;
+    background-color: transparent;
 }

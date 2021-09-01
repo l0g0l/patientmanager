@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom'
-import axiosClient from '../config/axios'    
+import { Link, withRouter } from 'react-router-dom'
+import axiosClient from '../config/axios'
 
-
-const NewAppointment = () => {
+//le tenemos que pasar props para poder utilizar el props.history.push() para redireccionar
+const NewAppointment = (props) => {
+    // console.log(props)
 
     //generamos los states para cada uno de los campos del formulario
     const [appointment, setAppointment] = useState({
@@ -33,19 +34,16 @@ const NewAppointment = () => {
 
         //enviamos la petición por Axios. Como segundo parámetro le tienes que poner lo que quieres agregar, por tanto el state appointment
         axiosClient.post('/patients', appointment)
-             .then(res => {
-                 console.log(res);
+            .then(res => {
+                console.log(res);
 
-                 //redireccionamos
-                 
-             })
+                props.setconsultAPI(true)//cambiamos de nuevo el state a true y como luego redirecciona a la ppal, a /, llega como true, entra en el if y consulta de nuevo la BBDD. Cuando redirecciona da un error de que history.push es undefined, esto es porque hemos perdido las props, podemos verlo en componments. para recuperarlas y que deje de fallar debemos importar withRouter y envolver el export default el nombre de la función con ello: export default withRouter(NewAppointment)
 
+                //redireccionamos
+                props.history.push('/')
 
-
+            })
     }
-
-
-
 
     return (
         <Fragment>
@@ -58,7 +56,7 @@ const NewAppointment = () => {
                     </div>
 
                     <div className="col-md-8 mx-auto">
-                        <form onSubmit ={createNewAppointment} className="bg-white p-5 bordered">
+                        <form onSubmit={createNewAppointment} className="bg-white p-5 bordered">
                             <div className="form-group">
                                 <label htmlFor="name">Pet Name</label>
                                 <input
@@ -167,4 +165,4 @@ const NewAppointment = () => {
     );
 }
 
-export default NewAppointment;
+export default withRouter(NewAppointment);

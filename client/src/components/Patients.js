@@ -19,7 +19,7 @@ const Patients = ({ data }) => {
                     <div className="col-md-8 mx-auto">
                         <div className="list-group">
                             {data.map(item => (
-                                <a key={item._id} href="" className="p-5 list-group-item list-group-item-action flex-column align-items-start">
+                                <Link to={`/appointment/${item._id}`} key={item._id} href="" className="p-5 list-group-item list-group-item-action flex-column align-items-start">
 
                                     <div className="d-flex w-100 justify-content-between mb-4">
                                         <h3 className="mb-3">{item.name} - {item.breed}</h3>
@@ -36,7 +36,7 @@ const Patients = ({ data }) => {
                                         <p>Email: {item.email}</p>
                                     </div>
 
-                                </a>
+                                </Link>
                             ))}
                         </div>
 
