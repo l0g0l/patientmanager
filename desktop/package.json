@@ -4,11 +4,13 @@
   "description": "app de Electron",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder -l"
   },
   "author": "Lucia",
   "license": "ISC",
-  "devDependencies": {
-    "electron": "^14.0.0"
+   "devDependencies": {
+    "electron": "^14.0.0",
+    "electron-builder": "^22.11.7"
   }
 }

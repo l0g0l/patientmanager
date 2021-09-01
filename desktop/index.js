@@ -12,7 +12,8 @@ function createWindow () {
         minWidth:800,
         minHeight:600,
         center:true,
-        show:false
+        show:false,
+        icon: 'icon.png'
     })
 
     //cunado la aplicación se cierra, eliminamos lo que estemos usando de memoria
