@@ -6,7 +6,7 @@ import cors from 'cors'
 import path from 'path'
 import morgan from 'morgan'
 import dotenv from 'dotenv';
-dotenv.config({path:"variables.env"});
+dotenv.config({path:"varissables.env"});
 
 const __dirname = path.resolve();
 
