@@ -27,10 +27,53 @@ const NewAppointment = (props) => {
             [e.target.name]: e.target.value
         })
     }
+    //validamos el formulario antes de enviarlo
+    const validateForm = (e) => {
+        e.preventDefault() //detenemos el formulario
+
+        let name = document.getElementById('name').value;
+        console.log(name)
+        if (name.length === 0) {
+            alert('You must complete name field');
+            return;
+        }
+
+        let breed = document.getElementById('breed').value;
+        if (breed.length === 0) {
+            alert('You must complete breed field');
+            return;
+        }
+        let owner = document.getElementById('owner').value;
+        if (owner.length === 0) {
+            alert('You must complete owner field');
+            return;
+        }
+        let telephone = document.getElementById('telephone').value;
+        if (telephone.length === 0) {
+            alert('You must complete telephone field');
+            return;
+        }
+        let email = document.getElementById('email').value;
+        if (email === /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i) {
+            alert('The email address is wrong');
+            return;
+        }
+        let date = document.getElementById('date').value;
+        if (date.length === 0) {
+            alert('You must complete date field');
+            return;
+        }
+        let symptoms = document.getElementById('symptoms').value;
+        if (symptoms.length === 0) {
+            alert('You must complete symptoms field');
+            return;
+        }
+        createNewAppointment() //hasta que no se valide no hace la petición axios al back, por eso llamamos a la función dentro de la de validación
+    }
 
     //enviamos una petición a la API
     const createNewAppointment = e => {
-        e.preventDefault() //detenemos el formulario
+
 
         //enviamos la petición por Axios. Como segundo parámetro le tienes que poner lo que quieres agregar, por tanto el state appointment
         axiosClient.post('/patients', appointment)
@@ -45,6 +88,7 @@ const NewAppointment = (props) => {
             })
     }
 
+
     return (
         <Fragment>
             <h1 className="my-5">Create New Appointment</h1>
@@ -56,7 +100,7 @@ const NewAppointment = (props) => {
                     </div>
 
                     <div className="col-md-8 mx-auto">
-                        <form onSubmit={createNewAppointment} className="bg-white p-5 bordered">
+                        <form onSubmit={validateForm} className="bg-white p-5 bordered" id="form">
                             <div className="form-group">
                                 <label htmlFor="name">Pet Name</label>
                                 <input
@@ -66,6 +110,7 @@ const NewAppointment = (props) => {
                                     name="name"
                                     placeholder="Pet Name"
                                     onChange={updateState}
+
                                 />
                             </div>
                             <div className="form-group">
@@ -94,7 +139,7 @@ const NewAppointment = (props) => {
                             <div className="form-group">
                                 <label htmlFor="telephone">Telephone Number</label>
                                 <input
-                                    type="tel"
+                                    type="number"
                                     className="form-control form-control-lg"
                                     id="telephone"
                                     name="telephone"
@@ -142,13 +187,14 @@ const NewAppointment = (props) => {
                                 <textarea
                                     className="form-control"
                                     name="symptoms"
+                                    id="symptoms"
                                     rows="6"
                                     onChange={updateState}
                                 ></textarea>
                             </div>
 
 
-                            <input type="submit" className="btn btn-primary mt-3 w-100 p-3 text-uppercase font-weight-bold" value="Crear Cita" />
+                            <input type="submit" className="btn btn-primary mt-3 w-100 p-3 text-uppercase font-weight-bold" value="Create Appointment" />
                         </form>
 
                     </div>
