@@ -6,8 +6,9 @@ import cors from 'cors'
 import path from 'path'
 import morgan from 'morgan'
 import dotenv from 'dotenv';
-dotenv.config({path:"varissables.env"});
+dotenv.config({path:"variables.env"});
 
+//si utilizo JS con imports y no requires, (commonjs) añadir esta línea para que no haya conflicto
 const __dirname = path.resolve();
 
 //creo el servidor
