@@ -6,7 +6,7 @@ import cors from 'cors'
 import path from 'path'
 import morgan from 'morgan'
 import dotenv from 'dotenv';
-dotenv.config({path:"variables.env"});
+dotenv.config({ path: "variables.env" });
 
 //si utilizo JS con imports y no requires, (commonjs) añadir esta línea para que no haya conflicto
 const __dirname = path.resolve();
@@ -28,7 +28,7 @@ const corsOptions = {
 
     }
 }
-// app.use(cors(corsOptions)) esta opción es la opción restrictiv de un dominio específico 
+// app.use(cors(corsOptions)) solo usar esta opción ya que es la que restringe a  un dominio específico 
 app.use(cors())
 
 //conectar a mongodb
@@ -39,8 +39,8 @@ mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-.then(mongoose => console.log('Conected BBDD')) 
-.catch(e => {console.log(e)})
+    .then(mongoose => console.log('Conected BBDD'))
+    .catch(e => { console.log(e) })
 
 
 //Definimos el puerto. Al hacer el deploy, el port será el que asgine el depliegue, porque no se sabe cual estará disponible, al estar en local, la variable .env.port no existe, por tanto correremos sonre el puerto 4000
@@ -58,11 +58,11 @@ app.use(morgan('dev'));
 //Agregar Router. El use soporta todos los verbos de express GET, POST, PATCH, PUT DELETE, de esta manera a la pag ppal, esta, agrega las rutas que hemos establecido en routes.js
 app.use('/', router)
 
-//Definir la carpeta public. // Servir los archivos estáticos de la aplicación React.En tripu path.resolve
+//Definir la carpeta public. // Servir los archivos estáticos de la aplicación React.En tripu path.resolve. Si hago dos carpeta, una de back y otra de front, para el deploy debo crear un package.json en la raiz
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.get('*', (req,res)=>{
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 });
 
 

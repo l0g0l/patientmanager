@@ -3,7 +3,7 @@
 <p align="center">
 <h4 align="center">Veterinary Patient Appointment Manager</h4>
   <p align="center">
-    <a href="https://pure-savannah-13335.herokuapp.com/">View Web Application</a>
+    <a href="https://veterinarypatientsmanager.herokuapp.com/">View Web Application</a>
   </p>
   <p align="center">
 <img src="https://www.codefactor.io/repository/github/l0g0l/patientmanager/badge" alt="Codefactor Grade">
@@ -121,17 +121,15 @@ npm start
 
 ## About The Project
 
-Creation of a Travel Agency web, you can add opinions about your holidays experience. This proyect it's sopported with Node-Express and SQL with Sequelize BBDD. It's responsive
+Creation of a Patient Appointment Manager. You can registered an appointment, show the details and delete it
 
 
 ### Requirements  
 -Create the architecture of the solution, and take charge of its implementation.
--Develop the front end of the app with PUG (template engine) and the backend with node+express.
+-Develop the frontend with React js and the backend with node+express.
 -The application must be responsive.
--Choose the appropriate database (SQL or NoSQL) for each app depending on the data model required.
+-Choose the appropriate database (SQL or NoSQL) for each app depending on the data model required, in that case MongoDB deployed in Atlas
 -Version control management with GiT
-
-
 
 
 <!-- APP OVERVIEW -->
