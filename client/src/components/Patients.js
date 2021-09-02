@@ -22,7 +22,7 @@ const Patients = ({ data }) => {
                                 <Link to={`/appointment/${item._id}`} key={item._id} href="" className="p-5 list-group-item list-group-item-action flex-column align-items-start">
 
                                     <div className="d-flex w-100 justify-content-between mb-4">
-                                        <h2 className="mb-3">{item.name} - {item.breed}</h2>
+                                        <h3 className="mb-3">{item.name} - {item.breed}</h3>
                                         <small className="fecha-alta">
                                             {item.date} - {item.time}
                                         </small>
