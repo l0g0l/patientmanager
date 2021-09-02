@@ -13,7 +13,7 @@
 
 </p>  
 <p align="center">
-<img src="public/img/accesibilidad.png" alt="Accesibility Rate" width="500"></p>
+<img src="client/public/img/accesibilidad.png" alt="Accesibility Rate" width="500"></p>
 
 </p>
 
@@ -128,7 +128,8 @@ Creation of a Patient Appointment Manager. You can registered an appointment, sh
 -Create the architecture of the solution, and take charge of its implementation.
 -Develop the frontend with React js and the backend with node+express.
 -The application must be responsive.
--Choose the appropriate database (SQL or NoSQL) for each app depending on the data model required, in that case MongoDB deployed in Atlas
+-Choose the appropriate database (SQL or NoSQL) for each app depending on the data model required, in that case MongoDB deployed in Atlas.
+-Responsive
 -Version control management with GiT
 
 
@@ -136,23 +137,7 @@ Creation of a Patient Appointment Manager. You can registered an appointment, sh
 
 ## App Overview  
 
-###### Home 
-
-<img src="public/img/readme/home.png" alt="home" >
-
-<br>
-<br>
-
-###### New Appointment 
-
-<img src="public/img/readme/nosotros.png" alt="nosotros" >
-
-<br>
-<br>
-
-###### Appointment Detail 
-
-<img src="public/img/readme/viajes.png" alt="viajes" >
+<img src="client/public/img/app.gif" alt="app en gif" >
 <br>
 <br>
 

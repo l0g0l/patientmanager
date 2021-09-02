@@ -157,6 +157,7 @@ const NewAppointment = (props) => {
                                     name="email"
                                     placeholder="Email"
                                     onChange={updateState}
+                                    autoComplete="off"
                                 />
                             </div>
 
