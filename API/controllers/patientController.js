@@ -11,7 +11,7 @@ const newClient = async (req, res, next) => {
     const patient = new Patient(req.body) // este Patient es el modelo que nos importamos
 
     try {
-        //con el método save() añadimos a la BBDD
+        //TODO con el método save() añadimos a la BBDD
         await patient.save()
         res.json({ message: 'Patient successfully added' })
 
