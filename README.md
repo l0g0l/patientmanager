@@ -6,12 +6,12 @@
     <a href="https://pure-savannah-13335.herokuapp.com/">View Web Application</a>
   </p>
   <p align="center">
-<img src="https://www.codefactor.io/repository/github/l0g0l/agenciadeviajes/badge" alt="Codefactor Grade">
+<img src="https://www.codefactor.io/repository/github/l0g0l/patientmanager/badge" alt="Codefactor Grade">
 </p>
 <p align="center">
-<img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_agenciadeviajes&metric=alert_status" alt="Sonar Quality Gate"></p>
+<img src="https://sonarcloud.io/api/project_badges/measure?project=l0g0l_patientmanager&metric=alert_status" alt="Sonar Quality Gate"></p>
 
-</p>
+</p>  
 <p align="center">
 <img src="public/img/accesibilidad.png" alt="Accesibility Rate" width="500"></p>
 
@@ -35,26 +35,38 @@
 
 To be more familiar with the libraries and frameworks I have mainly used I will leave a short explanation here:
 
-### [Pug](https://pugjs.org/api/getting-started.html)
+### [React-router](https://reactrouter.com/)
 
-npm install pug
+npm i react-router-dom
 
- PUG, is a Javascript library that was previously known as JADE. It is an easy-to-code template engine used to code HTML in a more readable fashion. One upside to PUG is that it equips developers to code reusable HTML documents by pulling data dynamically from the API. 
+React Router is a collection of navigational components that compose declaratively with your application. Whether you want to have bookmarkable URLs for your web app or a composable way to navigate in React Native, React Router works wherever React is rendering--so take your pick!  
+
+### [Axios](https://axios-http.com/docs/intro)  
+
+npm i axios  
+
+Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests.  
+
+### [Bootstrap](https://getbootstrap.com/)  
+
+npm i bootstrap  
+
+Bootstrap is a potent front-end framework used to create modern websites and web apps. It's open-source and free to use, yet features numerous HTML and CSS templates for UI interface elements such as buttons and forms. Bootstrap also supports JavaScript extensions.
 
 
 ### Prerequisites
 
 - [Node](https://nodejs.org/en/): 14.17.5 or more 
-- [PUG](https://pugjs.org/api/getting-started.html)
-- [mysql](https://www.mysql.com/)
+- [React js](https://es.reactjs.org/)
+- [MongoDB](https://www.mongodb.com/es)
 
-- Clone the repository on your local machine (https://github.com/l0g0l/agenciadeviajes.git)
+- Clone the repository on your local machine (https://github.com/l0g0l/patientmanager.git)
 
-## Installation
+## Installation   
 
-
+##### Frontend
 ```sh
-`cd agenciadeviajes` go into the folder
+`cd client` go into the folder
 ```
 
 Install dependecies and devDependencies
@@ -66,8 +78,44 @@ npm i
 Enter the following command
 
 ```sh
-npm start
+npm start   
+
+```   
+##### Backend 
+```sh
+`cd API` go into the folder
+``` 
+
+Install dependecies and devDependencies
+
+```sh
+npm i
 ```
+
+Enter the following command
+
+```sh
+npm start   
+
+```  
+##### Desktop App 
+```sh
+`cd clientDesktop` go into the folder
+``` 
+
+Install dependecies and devDependencies
+
+```sh
+npm i
+```
+
+Enter the following command
+
+```sh
+npm start   
+
+```
+
 
 <!-- ABOUT THE PROJECT -->
 
@@ -97,27 +145,20 @@ Creation of a Travel Agency web, you can add opinions about your holidays experi
 <br>
 <br>
 
-###### Nosotros 
+###### New Appointment 
 
 <img src="public/img/readme/nosotros.png" alt="nosotros" >
 
 <br>
 <br>
 
-###### Viajes 
+###### Appointment Detail 
 
 <img src="public/img/readme/viajes.png" alt="viajes" >
 <br>
 <br>
 
-###### Testimonios
 
-<img src="public/img/readme/testimonios.png" alt="testimonios" >
-
-<br>
-<br>
-
-<br>
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -128,29 +169,25 @@ The project is deployed in [Heroku](https://id.heroku.com/)
 <br>
 
 <p align="left">
-  </a> 
-       <a href="https://pugjs.org/api/getting-started.html" target="_blank"> 
-        <img src="/public/img/pug.svg" alt="mysql" width="40" height="40"/>
-    </a> 
     <a href="https://www.w3schools.com/css/" target="_blank"> 
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
     </a>
      </a>
        <a href="https://getbootstrap.com/" target="_blank">
-        <img src="public/img/bootstrap.svg" alt="bootstrap" width="40" height="40"/>
+        <img src="client/public/img/bootstrap.svg" alt="bootstrap" width="40" height="40"/>
     </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
     </a>
+       <a href="https://www.mongodb.com/es" target="_blank"> 
+        <img src="client/public/img/mongodb.svg" alt="mysql" width="100" height="60"/>
+    </a>
     <a href="https://nodejs.org" target="_blank">
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="100" height="70"/> 
     </a>
       <a href="https://expressjs.com" target="_blank"> 
-        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/>
-    </a> 
-       <a href="https://www.mysql.com/" target="_blank"> 
-        <img src="/public/img/mysql.svg" alt="mysql" width="40" height="40"/>
-    </a> 
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="80" height="70"/>
+    </a>  
     <a href="https://git-scm.com/" target="_blank">
         <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
     </a>

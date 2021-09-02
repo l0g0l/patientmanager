@@ -3,6 +3,8 @@ import express from 'express'
 import router from './routes/routes.js' // en la nueva versión con los imports, hay que colocar la extensión del archivo
 import mongoose from 'mongoose'
 import cors from 'cors'
+import dotenv from 'dotenv';
+dotenv.config({path:"variables.env"});
 
 //creo el servidor
 const app = express()
@@ -24,14 +26,14 @@ const corsOptions = {
 // app.use(cors(corsOptions)) esta opción es la opción restrictiv de un dominio específico 
 app.use(cors())
 
-
-
 //conectar a mongodb
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/veterinaria', {
+mongoose.connect('mongodb+srv://LuciaGLara:4I222CiMr4QE9kdB@lucia.ixcpc.mongodb.net/veterinaria', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
+.then(mongoose => console.log('Conected BBDD')) 
+.catch(e => {console.log(e)})
 
 
 //Definimos el puerto. Al hacer el deploy, el port será el que asgine el depliegue, porque no se sabe cual estará disponible, al estar en local, la variable .env.port no existe, por tanto correremos sonre el puerto 4000
